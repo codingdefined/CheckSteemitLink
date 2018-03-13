@@ -11,4 +11,8 @@
             var str = "You have loaded " + window.location.hostname + " site which seems to be a phising link, correct link is https://steemit.com";
         }
     }
+    if (url.includes("steemit-rewards")) {
+        var str = "You have loaded " + window.location.hostname + " site which seems to be a phising link, correct link is https://steemit.com";
+        alert(str);
+    }
 })();
