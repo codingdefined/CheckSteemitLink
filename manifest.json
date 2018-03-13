@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+
+  "name": "CheckSteemitLink",
+  "description": "This extension checks the phising link in Steemit",
+  "version": "1.0",
+  "background" : {
+    "scripts" : ["background.js"]
+  }
+}
