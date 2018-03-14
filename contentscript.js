@@ -30,6 +30,17 @@ function checkSteemitLink() {
             }
         }
     }
+    if (url.includes("steemit.com")) {
+        var l = document.links;
+        for (var i = 0; i < l.length; i++) {
+            if (!(l[i].href.includes("steemit.com") || l[i].href.includes("busy.org") || l[i].href.includes("busy.org") || l[i].href.includes("steemd.com"))) {
+                l[i].onclick = function () {
+                    var string = "The Site You will be redirecting to " + location.hostname + " is not a steemit site, DO NOT USE YOUR STEEMIT PASSWORD";
+                    alert(string);
+                }
+            }
+        }
+    }
 }
 
 setInterval(checkSteemitLink, 10000);
