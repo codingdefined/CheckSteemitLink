@@ -35,7 +35,9 @@ function checkSteemitLink() {
         for (var i = 0; i < l.length; i++) {
             if (!(l[i].href.includes("steemit.com") || l[i].href.includes("busy.org") || l[i].href.includes("busy.org") || l[i].href.includes("steemd.com"))) {
                 l[i].onclick = function () {
-                    var string = "The Site You will be redirecting to " + location.hostname + " is not a steemit site, DO NOT USE YOUR STEEMIT PASSWORD";
+                    var url = new URL(this.getAttribute('href'))
+                    var domain = url.hostname;
+                    var string = "The Site You will be redirecting to " + domain + " is not a steemit site, DO NOT USE YOUR STEEMIT PASSWORD";
                     alert(string);
                 }
             }
