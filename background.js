@@ -1,5 +1,5 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
-  chrome.tabs.executeScript(tab.ib, {
-        file: 'contentscript.js'
-    });
-}
+chrome.browserAction.onClicked.addListener(function(tab) {
+  chrome.tabs.executeScript({
+    file: 'popup.js'
+  });
+});
