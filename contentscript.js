@@ -8,12 +8,12 @@ function checkSteemitLink() {
                 url.includes("steemd.com") ||
                 url.includes("busy.org") ||
                 url.includes("utopian.io"))) {
-            var str = "You have loaded " + window.location.hostname + " site which seems to be a phising link, correct link is https://steemit.com";
+            var str = "You have loaded the website " + window.location.hostname + ", which could potentially be a phishing link; the correct link is https://steemit.com!";
            
         }
     }
     if (url.includes("steemit-rewards")) {
-        var str = "You have loaded " + window.location.hostname + " site which seems to be a phising link, correct link is https://steemit.com";
+        var str = "You have loaded the website " + window.location.hostname + ", which could potentially be a phishing link; the correct link is https://steemit.com!";
         alert(str);
     }
     if (url.includes("steemit.com") && url.includes("transfers")) {
@@ -22,11 +22,11 @@ function checkSteemitLink() {
 
         for (var i = 0; i < allMemoSpans.length; i++) {
             var previousMemo = allMemoSpans[i].innerHTML;
-            if (previousMemo.includes('The link in the memo is not Steemit Link')) {
+            if (previousMemo.includes('The link in the memo is not Steemit link!')) {
                 return;
             }
             if ((allMemoSpans[i].innerHTML.includes("http") || allMemoSpans[i].innerHTML.includes("https")) && !allMemoSpans[i].innerHTML.includes("steemit.com")) {
-                allMemoSpans[i].innerHTML = "<div style='color:red;'>The link in the memo is not Steemit Link</div> " + allMemoSpans[i].innerHTML;
+                allMemoSpans[i].innerHTML = "<div style='color:red;'>The link in the memo is not Steemit link!</div> " + allMemoSpans[i].innerHTML;
             }
         }
     }
@@ -37,7 +37,7 @@ function checkSteemitLink() {
                 l[i].onclick = function () {
                     var url = new URL(this.getAttribute('href'))
                     var domain = url.hostname;
-                    var string = "The Site You will be redirecting to " + domain + " is not a steemit site, DO NOT USE YOUR STEEMIT PASSWORD";
+                    var string = "This link will redirect you to " + domain + ", which is not a Steemit site; DO NOT USE YOUR STEEMIT PASSWORD!";
                     alert(string);
                 }
             }
